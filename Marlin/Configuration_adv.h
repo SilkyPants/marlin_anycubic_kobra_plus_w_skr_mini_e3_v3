@@ -1306,16 +1306,16 @@
  *
  * Tune with M593 D<factor> F<frequency>
  */
-//#define INPUT_SHAPING_X
-//#define INPUT_SHAPING_Y
+#define INPUT_SHAPING_X
+#define INPUT_SHAPING_Y
 //#define INPUT_SHAPING_Z
 #if ANY(INPUT_SHAPING_X, INPUT_SHAPING_Y, INPUT_SHAPING_Z)
   #if ENABLED(INPUT_SHAPING_X)
-    #define SHAPING_FREQ_X  40.0        // (Hz) The default dominant resonant frequency on the X axis.
+    #define SHAPING_FREQ_X  26.82        // (Hz) The default dominant resonant frequency on the X axis.
     #define SHAPING_ZETA_X   0.15       // Damping ratio of the X axis (range: 0.0 = no damping to 1.0 = critical damping).
   #endif
   #if ENABLED(INPUT_SHAPING_Y)
-    #define SHAPING_FREQ_Y  40.0        // (Hz) The default dominant resonant frequency on the Y axis.
+    #define SHAPING_FREQ_Y  24.17        // (Hz) The default dominant resonant frequency on the Y axis.
     #define SHAPING_ZETA_Y   0.15       // Damping ratio of the Y axis (range: 0.0 = no damping to 1.0 = critical damping).
   #endif
   #if ENABLED(INPUT_SHAPING_Z)
@@ -2481,7 +2481,7 @@
   #if ENABLED(DISTINCT_E_FACTORS)
     #define ADVANCE_K { 0.0 }     // (mm) Compression length per 1mm/s extruder speed, per extruder. Override with 'M900 T<tool> K<mm>'.
   #else
-    #define ADVANCE_K 0.0         // (mm) Compression length for all extruders. Override with 'M900 K<mm>'.
+    #define ADVANCE_K 0.5         // (mm) Compression length for all extruders. Override with 'M900 K<mm>'.
   #endif
   //#define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with 'M900 L'.
 #endif
